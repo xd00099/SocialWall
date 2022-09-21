@@ -11,3 +11,11 @@ A full stack social application using MERN stack.
 
 ## Demo
 
+- Overall UI:
+![demo](./images/demo_ui.png)
+
+- Recommendation:
+![demo](./images/recom.png)
+
+- Login System:
+![login](./images/login.png)
