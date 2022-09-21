@@ -8,6 +8,8 @@ A full stack social application using MERN stack.
 - Support Google Oauth2.0 with the lastest authentication system.
 - Native login, signup support with MongoDB backend.
 - Support comments.
+- Recommendation system
+- Seach by tags support.
 
 ## Demo
 
