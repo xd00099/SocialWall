@@ -6,27 +6,36 @@ import Input from './input';
 import jwt_decode from 'jwt-decode';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { signin, signup } from '../../actions/auth';
 
-import { useGoogleLogin, GoogleLogout, GoogleLogin } from '@react-oauth/google';
+import { GoogleLogin, googleLogout } from '@react-oauth/google';
 
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: ''};
 
 const Auth = () => {
     const classes = useStyles();
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
+    const [formData, setFormData] = useState(initialState);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    const handleSubmit = () => {
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
         
+        if (isSignup) {
+            dispatch(signup(formData, navigate));
+        } else {
+            dispatch(signin(formData, navigate));
+        };
     };
-    const handleChange = () => {
-
+    const handleChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value})
     };
     const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
     const switchMode = () => {
         setIsSignup(!isSignup);
-        handleShowPassword(false);
+        setShowPassword(false);
     }
 
     const googleSuccess = async (res) => {
@@ -38,7 +47,7 @@ const Auth = () => {
         try {
             dispatch({type: 'AUTH', data: {result, token}});
 
-            navigate('/');
+            navigate('/posts');
         } catch (error) {
             console.log(error);
         }
@@ -68,6 +77,9 @@ const Auth = () => {
                     </Grid>
                     <Button type='submit' fullWidth variant='contained' color='primary' className={classes.submit}>
                         {isSignup ? 'Sign Up' : 'Sign In'}
+                    </Button>
+                    <Button onClick={() => {navigate('/posts')}} fullWidth variant='contained' color='primary' className={classes.submit} style={{marginTop: 0}}>
+                        Continue as Guest
                     </Button>
                     <div style={{display: 'flex', justifyContent: 'center'}}>
                         <GoogleLogin type='standard' theme='filled_blue' onSuccess={(response) => googleSuccess(response)}></GoogleLogin>
