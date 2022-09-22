@@ -1,6 +1,7 @@
 # SocialWall
 
-## Link: https://social-wall.netlify.app/
+## Link (deployed using free tier Heroku, may take a while to load content): https://social-wall.netlify.app/
+
 A full stack social application using MERN stack.
 
 
@@ -13,11 +14,11 @@ A full stack social application using MERN stack.
 
 ## Demo
 
-- Overall UI:
+### Overall UI:
 ![demo](./images/demo_ui.png)
 
-- Recommendation:
+### Recommendation:
 ![demo](./images/recom.png)
 
-- Login System:
+### Login System:
 ![login](./images/login.png)
