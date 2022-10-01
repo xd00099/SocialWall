@@ -18,9 +18,8 @@ app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Hello to PetClub API');
+    res.send('Hello to SocialWall API!');
 })
-
 
 const PORT = process.env.PORT || 5001;
 
