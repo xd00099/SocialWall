@@ -15,8 +15,8 @@ const App = () => {
     return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}>
         <BrowserRouter>
+        <Navbar />
             <Container maxWidth='xl'>
-                <Navbar />
                 <Routes>
                     <Route path="/" exact element={<Navigate to="/auth" />} />
                     <Route path="/posts" exact element={<Home />} />

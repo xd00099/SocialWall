@@ -21,7 +21,6 @@ const Home = () => {
 
   const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
-
   const [search, setSearch] = useState('');
   const [tags, setTags] = useState([]);
   const navigate = useNavigate();
@@ -63,7 +62,7 @@ const Home = () => {
                 label="Search Tags"
                 variant="outlined"
               />
-              <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">Search</Button>
+              <Button onClick={searchPost} className={classes.searchButton} variant="contained" style={{backgroundColor: "#1DA1F2"}} color="primary">Search</Button>
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
             {(!searchQuery && !tags.length) && (
