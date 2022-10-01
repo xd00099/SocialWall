@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { signin, signup } from '../../actions/auth';
 
-import { GoogleLogin, googleLogout } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: ''};
 
@@ -42,7 +42,6 @@ const Auth = () => {
         // console.log(res);
         const token = res?.credential;
         const result = jwt_decode(res?.credential);
-        console.log(result);
 
         try {
             dispatch({type: 'AUTH', data: {result, token}});
