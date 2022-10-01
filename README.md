@@ -9,6 +9,7 @@ A full stack social application using MERN stack.
 ## Key features:
 - Friendly UI for unique users
 - Guest browsing mode
+- Responsive Design, universal support for all sized phone screens or PCs
 - Support Google Oauth2.0 with the lastest authentication system.
 - Native login, signup support with MongoDB backend.
 - Support comments.
