@@ -19,7 +19,10 @@ A full stack social application using MERN stack.
 ## Demo
 
 ### Overall UI:
-![demo](./images/demo_ui.png)
+PC view            |  Mobil View
+:-------------------------:|:-------------------------:
+![](./images/demo_ui.png)  |  ![](./images/demo_ui2.png)
+
 
 ### Recommendation:
 ![demo](./images/recom.png)
