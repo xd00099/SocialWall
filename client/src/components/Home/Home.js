@@ -46,9 +46,9 @@ const Home = () => {
 
   return (
     <Grow in>
-      <Container maxWidth="xl">
+      <Container style={{'padding': '0'}} maxWidth={false}>
         <Grid container justifyContent="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
-        <Grid className={classes.search} item xs={12} sm={12} md={3}>
+        <Grid className={classes.search} item xs={12} sm={12} md={3} lg={2}>
         <AppBar className={classes.appBarSearch} position="static" color="inherit">
               <TextField onKeyDown={handleKeyPress} name="search" variant="outlined" label="Search Posts" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />
               <ChipInput
@@ -67,10 +67,10 @@ const Home = () => {
               </Paper>
             )}
             </Grid>
-          <Grid  className={classes.posts} item xs={12} sm={12} md={6}>
+          <Grid  className={classes.posts} item xs={12} sm={12} md={6} lg={7}>
             <Posts setCurrentId={setCurrentId} />
           </Grid>
-          <Grid className={classes.postMaker} item xs={12} sm={12} md={3}>
+          <Grid className={classes.postMaker} item xs={12} sm={12} md={3} lg={3}>
             <Form currentId={currentId} setCurrentId={setCurrentId} />
           </Grid>
         </Grid>

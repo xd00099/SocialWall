@@ -30,8 +30,9 @@ export default makeStyles((theme) => ({
       overflow: 'hidden'
     },
     [theme.breakpoints.up('md')]: {
-      maxHeight: '86vh',
-      overflowY: 'scroll'
+      height: '88vh',
+      overflowY: 'scroll',
+      display: 'block'
     },
   },
   postMaker: {

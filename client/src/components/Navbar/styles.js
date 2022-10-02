@@ -17,7 +17,10 @@ export default makeStyles((theme) => ({
       padding: '0 0',
       minHeight: '40px'
     },
-    backgroundColor: 'rgba(255, 255, 255, .95)'
+    backgroundColor: 'rgba(255, 255, 255, .95)',
+    [theme.breakpoints.up('md')]: {
+      maxHeight: '10vh'
+    },
   },
   heading: {
     fontFamily: "Chalkduster, fantasy",

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Card, CardActions, CardContent, CardHeader, Avatar, CardMedia, Button, Typography, ButtonBase } from '@material-ui/core/';
 
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CommentOutlinedIcon from '@material-ui/icons/CommentOutlined';
 
-import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
+import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
@@ -35,15 +35,10 @@ const Post = ({ post, setCurrentId }) => {
 
   const Likes = () => {
     if (likes.length > 0) {
-      return likes.find((like) => like === userId)
-        ? (
-          <><ThumbUpAltIcon fontSize="small" />&nbsp;{likes.length > 2 ? `You and ${likes.length - 1} others` : `${likes.length} like${likes.length > 1 ? 's' : ''}` }</>
-        ) : (
-          <><ThumbUpAltOutlined fontSize="small" />&nbsp;{likes.length} {likes.length === 1 ? 'Like' : 'Likes'}</>
-        );
+      return <><FavoriteIcon fontSize="small" />&nbsp;{likes.length}</>
     }
 
-    return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Like</>;
+    return <><FavoriteBorder fontSize="small" />&nbsp;Like</>;
   };
 
   const openPost = (e) => {
@@ -88,7 +83,7 @@ const Post = ({ post, setCurrentId }) => {
         </Button>
         {(user?.result?.sub === post?.creator || user?.result?._id === post?.creator) && (
           <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
-            <DeleteIcon fontSize="small" /> &nbsp; Delete
+            <><DeleteIcon fontSize="small" /> Delete </>
           </Button>
         )}
       </CardActions>
