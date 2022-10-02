@@ -3,6 +3,7 @@ import { Card, CardActions, CardContent, CardHeader, Avatar, CardMedia, Button, 
 
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
+import CommentOutlinedIcon from '@material-ui/icons/CommentOutlined';
 
 import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
 import { useDispatch } from 'react-redux';
@@ -64,6 +65,7 @@ const Post = ({ post, setCurrentId }) => {
         component="span"
         name="test"
         className={classes.cardAction}
+        disabled  // set disabled because i added comment section to open the post
         onClick={openPost}
       >
         <CardMedia className={classes.media} image={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={post.title} />
@@ -80,6 +82,9 @@ const Post = ({ post, setCurrentId }) => {
       <CardActions className={classes.cardActions}>
         <Button size="small" color="primary" disabled={!user?.result} onClick={handleLike}>
           <Likes />
+        </Button>
+        <Button size="small" color="primary" disabled={!user?.result} onClick={openPost}>
+          <CommentOutlinedIcon />
         </Button>
         {(user?.result?.sub === post?.creator || user?.result?._id === post?.creator) && (
           <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>

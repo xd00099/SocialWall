@@ -42,7 +42,7 @@ const Form = ({ currentId, setCurrentId }) => {
     return (
       <Paper className={classes.paper} elevation={6}>
         <Typography style={{fontFamily:'cursive'}} variant="h6" align="center">
-          Please Sign In to create your own or like other's posts.
+          Please Sign In to create your own, or comment and like others' posts.
         </Typography>
       </Paper>
     );
