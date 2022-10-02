@@ -13,8 +13,30 @@ export default makeStyles((theme) => ({
     padding: '16px',
   },
   gridContainer: {
-    [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column-reverse',
+    // [theme.breakpoints.down('sm')]: {
+    //   flexDirection: 'column-reverse',
+    // },
+  },
+  search: {
+    [theme.breakpoints.down('sm')]: {
+      order: -1,
     },
   },
+  posts: {
+    position: 'relative',
+    [theme.breakpoints.only('xs') && theme.breakpoints.only('sm')]: {
+      maxHeight: 'none',
+      order: 0,
+      overflow: 'hidden'
+    },
+    [theme.breakpoints.up('md')]: {
+      maxHeight: '85vh',
+      overflow: 'scroll'
+    },
+  },
+  postMaker: {
+    [theme.breakpoints.down('sm')]: {
+      order: -1,
+    },
+  }
 }));

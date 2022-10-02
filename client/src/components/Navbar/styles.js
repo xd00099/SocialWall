@@ -14,6 +14,8 @@ export default makeStyles((theme) => ({
     top: '0',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
+      padding: '0 0',
+      minHeight: '40px'
     },
     backgroundColor: 'rgba(255, 255, 255, .95)'
   },
@@ -21,7 +23,16 @@ export default makeStyles((theme) => ({
     fontFamily: "Chalkduster, fantasy",
     fontSize: '2.5em',
     fontWeight: 1000,
-    color: "#1DA1F2"
+    color: "#1DA1F2",
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2em',
+      padding: '0'
+    },
+  },
+  button: {
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.8em'
+    },
   },
   image: {
     marginLeft: '10px',
@@ -42,18 +53,24 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
-      marginTop: 20,
       justifyContent: 'center',
     },
   },
   logout: {
-    marginLeft: '20px'
+    marginLeft: '20px',
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '10px',
+      fontSize: '0.8em'
+    },
   },
   userName: {
     display: 'flex',
     alignItems: 'center',
     textAlign: 'center',
-    color: 'black'
+    marginLeft: '10px',
+    color: 'black',
+    fontFamily: 'Comic Sans MS',
+    fontWeight: 'bold'
   },
   brandContainer: {
     display: 'flex',
