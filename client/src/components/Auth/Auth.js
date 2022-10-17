@@ -149,13 +149,13 @@ const Auth = () => {
                     <Button onClick={() => {navigate('/posts')}} fullWidth variant='contained' color='primary' className={classes.submit} style={{marginTop: 0 , backgroundColor: "#1DA1F2"}}>
                         Continue as Guest
                     </Button>
-                    <div style={{display: 'flex', justifyContent: 'center'}}>
+                    <div style={{display: 'flex', justifyContent: 'end'}}>
                         <GoogleLogin type='standard' theme='filled_blue' onSuccess={(response) => googleSuccess(response)}></GoogleLogin>
                     </div>
                     <Grid container justifyContent='flex-end'>
                         <Grid item>
                             <Button onClick={switchMode}>
-                                { isSignup ? "Already have an account? Sign In" : "Don't have an account? Sign Up"}
+                                { isSignup ? "Have an account? Sign In" : "No account? Sign Up"}
                             </Button>
                         </Grid>
                     </Grid>

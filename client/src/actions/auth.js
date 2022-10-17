@@ -9,7 +9,7 @@ export const signin = (formData, navigate) => async (dispatch) => {
         // navigate to home
         navigate('/posts');
     } catch (error) {
-        
+        alert('Incorrect username or password!');
     }
 };
 
