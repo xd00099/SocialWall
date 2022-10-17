@@ -1,4 +1,4 @@
-# SocialWall
+# SocialWall [![Netlify Status](https://api.netlify.com/api/v1/badges/69a6c35e-0e56-42e1-8a08-d1f0bc6224a3/deploy-status)](https://app.netlify.com/sites/social-wall/deploys)
 
 ## Link (deployed w/ free tier Heroku, may take a while to load content): 
 
