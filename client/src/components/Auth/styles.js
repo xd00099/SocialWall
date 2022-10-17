@@ -1,12 +1,42 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
+  main: {
+    display: 'flex'
+  },
+  bg: {
+    display: 'flex',
+    justifyContent: 'center',
+    // alignItems: 'center',
+    paddingTop: '45vh',
+    [theme.breakpoints.down('md')]: {
+      alignItems: 'center',
+      padding: 0
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '100vw',
+      height: '400px'
+    },
+  },
+  text: {
+    color: 'rgb(20, 195, 230)',
+    fontSize: '5em',
+    fontFamily: 'cursive',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '3em',
+    },
+  }
+  ,
   paper: {
-    marginTop: theme.spacing(8),
+    paddingTop: theme.spacing(8),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     padding: theme.spacing(2),
+    paddingLeft: theme.spacing(5),
+    paddingRight: theme.spacing(5),
+    [theme.breakpoints.down('sm')]: {
+    },
   },
   root: {
     '& .MuiTextField-root': {
