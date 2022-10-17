@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CssBaseline, Avatar, Button, Grid, Typography} from '@material-ui/core';
+import { CssBaseline, Avatar, Button, Grid, Typography, Link} from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './styles';
 import Input from './input';
@@ -153,10 +153,10 @@ const Auth = () => {
                         <GoogleLogin type='standard' theme='filled_blue' onSuccess={(response) => googleSuccess(response)}></GoogleLogin>
                     </div>
                     <Grid container justifyContent='flex-end'>
-                        <Grid item>
-                            <Button onClick={switchMode}>
+                        <Grid item style={{paddingTop:'5px'}}>
+                            <Link href='#' variant="body2" onClick={switchMode}>
                                 { isSignup ? "Have an account? Sign In" : "No account? Sign Up"}
-                            </Button>
+                            </Link>
                         </Grid>
                     </Grid>
                 </form>
