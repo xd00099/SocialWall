@@ -1,4 +1,4 @@
-# MERN Project: SocialWall [![Netlify Status](https://api.netlify.com/api/v1/badges/69a6c35e-0e56-42e1-8a08-d1f0bc6224a3/deploy-status)](https://app.netlify.com/sites/social-wall/deploys)
+# MERN Project: SocialWall
 
 
 A full stack social application using MERN stack. 
